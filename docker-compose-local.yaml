@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  arithland-telegram:
+    image: golang:latest
+    volumes:
+      - ./:/app
+      - go_mod_cache:/go/pkg/mod
+    working_dir: /app
+    env_file:
+      - .env
+    command: tail -f /dev/null
+volumes:
+  go_mod_cache:
